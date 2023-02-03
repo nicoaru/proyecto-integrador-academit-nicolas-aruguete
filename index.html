@@ -30,9 +30,9 @@
             <div class="navCenter">
                 <a href="index.html">Inicio</a>
                 <span><i class="fa-solid fa-circle"></i></span>
-                <a href="contacto.html">Contacto</a>
+                <a href="pages/contacto.html">Contacto</a>
                 <span><i class="fa-solid fa-circle"></i></span>
-                <a href="privado.html">Privado</a>
+                <a href="pages/privado/index.html">Privado</a>
             </div>
         </nav>
     </header>
@@ -148,10 +148,10 @@
                     <a href="index.html">Inicio</a>
                 </li>
                 <li>
-                    <a href="contacto.html">Contacto</a>
+                    <a href="pages/contacto.html">Contacto</a>
                 </li>
                 <li>
-                    <a href="privado.html">Privado</a>
+                    <a href="pages/privado/index.html">Privado</a>
                 </li>
             </ul>
         </div>
@@ -180,28 +180,7 @@
 
     </footer>
 
-    <script>
-        const collageModal = document.getElementById('collageModal');
-        const collageCloseModalBtn = document.getElementById('closeModalBtn')
-        const collageModalImg = document.querySelector('#collageModal img')
-        const collageImgDivs = document.querySelectorAll('.collageRow img');
-
-        const showModal = (imgUrl) => {
-            collageModal.children[1].children[0].src = imgUrl;
-            collageModal.dataset.show = 'true';
-        }
-
-        const closeModal = () => {
-            collageModal.dataset.show = 'false';
-        }
-
-        collageImgDivs.forEach(elem => {
-            const imgUrl = elem.src;
-            elem.onclick = () => showModal(imgUrl);
-        })
-
-        collageCloseModalBtn.onclick = closeModal;
-    </script>
+<script src="js/main.js"></script>
 </body>
 
 </html>

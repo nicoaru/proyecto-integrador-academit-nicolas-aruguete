@@ -1,0 +1,23 @@
+/* ..... MAIN ..... */
+
+main {
+    margin: 87.5px 0px 175px  0px;
+}
+
+#tasksCardsContainer {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    row-gap: 15px;
+}
+    .taskCard {
+        width: 30%;
+        min-width: 250px;
+        height: 250px;
+        padding: 10px;
+
+        border-radius: 5px;
+        box-shadow: 0px 0px 5px 0px rgb(28, 24, 24);
+    }

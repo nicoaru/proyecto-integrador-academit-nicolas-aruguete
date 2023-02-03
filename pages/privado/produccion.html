@@ -18,16 +18,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/privado.css">
 
-    <!-- Script -->
-    <script>
-        console.log("username", sessionStorage.getItem("username"))
-        const username = sessionStorage.getItem("username");
-        const role = sessionStorage.getItem("role");
+    <!-- JS que chequea si hay un usuario logeado -->
+    <script src="js/isLogged.js"></script>
 
-        if (!username) location.replace("login.html")
-    </script>
-
-    <title>Fusion - Privado</title>
+    <title>Producción</title>
 </head>
 
 <body>
@@ -36,11 +30,13 @@
         <img src="img/logoFusion.png" alt="Logo de 'Fusión a Medida'">
         <nav>
             <div class="navCenter">
-                <a href="privado.html">Inicio</a>
+                <a href="index.html">Inicio</a>
                 <span><i class="fa-solid fa-circle"></i></span>
                 <a href="clientes.html">Clientes</a>
                 <span><i class="fa-solid fa-circle"></i></span>
                 <a href="pedidos.html">Pedidos</a>
+                <span><i class="fa-solid fa-circle"></i></span>
+                <a href="produccion.html">Produccion</a>
                 <span><i class="fa-solid fa-circle"></i></span>
                 <a href="carga-pedidos.html">Cargar Pedido</a>
 
@@ -51,35 +47,7 @@
 
 
     <main>
-        <h1>Privado - Inicio</h1>
-
-        <div id="tasksCardsContainer">
-            <div class="taskCard">
-                <h2>Pendientes de entrega</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Neque error alias, dignissimos nam dolore optio illo atque sunt assumenda excepturi ullam laudantium recusandae repellendus possimus repellat voluptatem beatae! Quia, excepturi!
-                </p>
-            </div>
-            <div class="taskCard">
-                <h2>Cotizaciones</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugiat maxime quo neque est quasi eveniet quia ducimus quibusdam sed distinctio consequuntur tempora praesentium, assumenda architecto dolor, pariatur id dolore animi.</p>
-            </div>
-            <div class="taskCard">
-                <h2>Task 3</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Corporis perferendis deleniti accusantium consectetur quod deserunt dignissimos ipsum. In, hic debitis vitae laudantium consectetur sunt vel eveniet amet id dicta! Odio?</p>
-            </div>
-            <div class="taskCard">
-                <h2>Task 4</h2>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo suscipit nesciunt quidem ullam at aliquid vero autem veritatis qui hic. Impedit autem iste illo excepturi adipisci porro nobis eaque voluptas!</p>
-            </div>
-            <div class="taskCard">
-                <h2>Task 5</h2>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis itaque laboriosam, adipisci, sunt aliquam optio veritatis quo unde nisi doloribus ratione, quibusdam temporibus consequatur omnis. Quidem ab sequi ratione modi?</p>
-            </div>
-            <div class="taskCard">
-                <h2>Task 6</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maxime, impedit commodi eaque, perferendis inventore corrupti velit quaerat, ducimus rem dolorum optio nobis magni fuga distinctio consectetur ratione officia recusandae est.</p>
-            </div>
-        </div>
+        <h1>Privado</h1>
     </main>
 
 
@@ -88,7 +56,7 @@
         <div class="footerMenuContainer">
             <ul>
                 <li>
-                    <a href="privado.html">Inicio</a>
+                    <a href="index.html">Inicio</a>
                 </li>
                 <li>
                     <a href="clientes.html">Clientes</a>

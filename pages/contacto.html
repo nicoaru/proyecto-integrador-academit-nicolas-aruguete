@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,47 +15,45 @@
         rel="stylesheet">
 
     <!-- CSS StyleSheets -->
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/contacto.css">
 
-    <title>Document</title>
+
+    <title>Fusion - Contacto</title>
 </head>
+
 <body>
 
     <header>
-        <img src="img/logoFusion.png" alt="Logo de 'Fusión a Medida'">
+        <img src="../img/logoFusion.png" alt="Logo de 'Fusión a Medida'">
         <nav>
             <div class="navCenter">
-                <a href="index.html">Inicio</a>
+                <a href="../index.html">Inicio</a>
                 <span><i class="fa-solid fa-circle"></i></span>
                 <a href="contacto.html">Contacto</a>
                 <span><i class="fa-solid fa-circle"></i></span>
-                <a href="privado.html">Privado</a>
+                <a href="privado/index.html">Privado</a>
             </div>
         </nav>
     </header>
 
+
     <main>
-        <form action="">
-            <input type="text" name="username" id="usernameInput" placeholder="usuario" required>
 
-            <input type="password" name="password" id="passwordInput" placeholder="contraseña" required>
-
-            <button id="loginButton">Login</button>
-        </form>
     </main>
+
 
     <footer>
         <div class="footerMenuContainer">
             <ul>
                 <li>
-                    <a href="index.html">Inicio</a>
+                    <a href="../index.html">Inicio</a>
                 </li>
                 <li>
                     <a href="contacto.html">Contacto</a>
                 </li>
                 <li>
-                    <a href="privado.html">Privado</a>
+                    <a href="privado/index.html">Privado</a>
                 </li>
             </ul>
         </div>
@@ -82,24 +81,6 @@
         </div>
 
     </footer>
-
-
-
-
-
-<script>
-        const loginButton = document.getElementById('loginButton')
-        const usernameInput = document.getElementById('usernameInput')
-        const login = (usernameValue) => {
-            const username = usernameInput.value;
-            console.log("usernameValue: ", username)
-            sessionStorage.setItem('username', username);
-            location.assign("privado.html")
-        }
-        loginButton.onclick = () => {
-            event.preventDefault();
-            login(usernameInput);
-        }
-    </script>
 </body>
+
 </html>
