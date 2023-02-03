@@ -1,0 +1,184 @@
+/* ..... MAIN ..... */
+
+main {
+    margin: 87.5px 0px 175px  0px;
+}
+    /* COLLAGE */
+    main #collageContainer {
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+    }
+        main #collageContainer .collageRow {
+            display: flex;
+            flex-flow: row nowrap;
+            column-gap: 2px;
+            margin: 1px 0px;
+        }
+        main #collageContainer .collageRow:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        main #collageContainer .collageRow div {
+            position: relative;
+            width: 30%;
+            height: 200px;
+            overflow: hidden;
+            border: 2px solid transparent;
+            cursor: pointer;
+
+            transition: all .7s ease;
+        }
+        main #collageContainer .collageRow div:nth-child(odd) {
+            width: 30%;
+        }
+        main #collageContainer .collageRow div:nth-child(even) {
+            width: 20%;            
+        }
+        main #collageContainer .collageRow img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        /* COLLAGE MODAL */
+        #collageModal {
+            position: absolute;
+            display: none;
+            height: 60%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            transition: opacity 5s ease;
+        }
+        #collageModalBody {
+            height: 100%;
+        }
+        #collageModal img {
+            height: 100%;
+            box-shadow: 0px 0px 10px 10px rgba(0,0,0,0.4);
+        }
+        #collageModal .closeModalBtn {
+            position: absolute;
+            top: 0;
+            left: 100%;
+            text-shadow: 0px 0px 10px rgba(242,237,237,0.73);
+            
+            transform: translate(-50%, -50%);
+        }
+        
+        /* hover */
+        main #collageContainer .collageRow div:hover {
+            transform: scale(110%);
+            border: 2px solid whitesmoke;
+            z-index: 10;
+        }
+        /* toggle modal */
+        main #collageContainer #collageModal[data-show="true"] {
+            display: block;
+            z-index: 20;
+        }
+        main #collageContainer #collageModal[data-show="false"] {
+            display: none;
+        }
+    
+    
+    /* INFO */
+    main #infoContainer {
+        width: 70%;
+        margin: 175px auto;
+        font-weight: 700;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+    }
+    main #infoContainer div {
+        text-align: center;
+        transition: all 1.5s ease;
+    }
+        main #infoContainer i {
+            font-size: 6rem;
+            color: rgba(235, 184, 31, 0.619);
+            margin-bottom: 25px;
+        }
+        main #infoContainer p {
+            margin-bottom: 0.5em;
+        }
+    /* hovers */
+    main #infoContainer div:hover {
+        transform: scale(120%);
+    }
+
+
+    /* TIENDAS */
+    main #tiendasContainer {
+        width: 600px;
+        height: 400px;
+        margin: 0 auto;
+        display: flex;
+        flex-flow: row nowrap;
+        flex-basis: 1;
+    }
+        main #tiendasContainer div {
+            position: relative;
+            width: 0;
+            flex-grow: 1;
+            overflow: hidden;
+            transition: all 1.5s ease;
+        }
+        main #tiendasContainer img {
+            height: 100%;
+            object-fit: cover;
+            object-position: left;
+            opacity: 0.7;
+            transition: all 1.5s ease;
+        }
+        main #tiendasContainer div>h3 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(-90deg);
+            font-size: 2.5rem;
+            font-weight: 400;
+            transition: opacity 1s ease;
+        }
+        main #tiendasContainer div article {
+            width: 50%;
+            height: 50%;
+            background-color: #28242464;
+            border-radius: 4px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: opacity .5s ease;
+        }
+        main #tiendasContainer div article h4 {
+            color: whitesmoke;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        main #tiendasContainer div article p {
+            color: whitesmoke;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* hovers */
+        main #tiendasContainer div:hover {
+            width: 70%;
+            opacity: 1;
+        }        
+        main #tiendasContainer div:hover img {
+            opacity: 1;
+        }   
+        main #tiendasContainer div:hover>h3 {
+            opacity: 0;
+        }
+        main #tiendasContainer div:hover article {
+            opacity: 1;
+            transition: opacity 1s ease .3s;
+        }   
+
