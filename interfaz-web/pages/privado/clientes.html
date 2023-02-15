@@ -14,14 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
 
+
     <!-- CSS StyleSheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/privado.css">
+    <link rel="stylesheet" href="css/clientes.css">
 
     <!-- JS que chequea si hay un usuario logeado -->
     <script src="js/isLogged.js"></script>
 
-    <title>Fusion - Privado</title>
+    <title>Clientes</title>
 </head>
 
 <body>
@@ -47,7 +48,32 @@
 
 
     <main>
-        <h1>Pedidos</h1>
+        <h1>Clientes</h1>
+        <section id="containerTabla">
+            <table id="tablaClientes" class="hide">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Dirección</th>
+                        <th>Tipo de cliente</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTablaClientes">
+
+                </tbody>
+            </table>
+        </section>
+
+        <section id="containerModalEdit">
+
+        </section>
+
+
+
     </main>
 
 
@@ -93,6 +119,10 @@
         </div>
 
     </footer>
+
+
+    <script src="js/api.js"></script>
+    <script src="js/clientes.js"></script>
 </body>
 
 </html>

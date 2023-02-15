@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,56 +16,62 @@
 
     <!-- CSS StyleSheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/clientes.css">
 
     <!-- JS que chequea si hay un usuario logeado -->
     <script src="js/isLogged.js"></script>
 
-    <title>Document</title>
+    <title>Clientes</title>
 </head>
+
 <body>
 
     <header>
         <img src="img/logoFusion.png" alt="Logo de 'Fusión a Medida'">
         <nav>
             <div class="navCenter">
-                <a href="../../index.html">Inicio</a>
+                <a href="index.html">Inicio</a>
                 <span><i class="fa-solid fa-circle"></i></span>
-                <a href="../contacto.html">Contacto</a>
+                <a href="clientes.html">Clientes</a>
                 <span><i class="fa-solid fa-circle"></i></span>
-                <a href="index.html">Privado</a>
+                <a href="pedidos.html">Pedidos</a>
+                <span><i class="fa-solid fa-circle"></i></span>
+                <a href="produccion.html">Produccion</a>
+                <span><i class="fa-solid fa-circle"></i></span>
+                <a href="carga-pedidos.html">Cargar Pedido</a>
+
             </div>
         </nav>
     </header>
 
+
+
     <main>
-        <form action="">
-            <input type="text" name="username" id="usernameInput" placeholder="usuario" required>
-
-            <input type="password" name="password" id="passwordInput" placeholder="contraseña" required>
-
-            <button id="loginButton">Login</button>
-
-            <div id="pista">
-                <p><i>Usuarios válidos para probar:</i></p>
-                <p><i>nicoaru / 1234</i></p>
-                <p><i>juanperez / 2345</i></p>
-                <p><i>anaprada / 3456</i></p>
-            </div>
-        </form>
+        <div class="contenedorDetalles">
+            <div id="contenedorError" class="contenedorDatos"></div>
+            <div id="contenedorDatosPedido" class="contenedorDatos"></div>
+            <div id="contenedorMueblesPendientes" class="contenedorDatos"></div>
+            <div id="contenedorMueblesEntregados" class="contenedorDatos"></div>
+        </div>
     </main>
+
+
+
 
     <footer>
         <div class="footerMenuContainer">
             <ul>
                 <li>
-                    <a href="../../index.html">Inicio</a>
+                    <a href="index.html">Inicio</a>
                 </li>
                 <li>
-                    <a href="../contacto.html">Contacto</a>
+                    <a href="clientes.html">Clientes</a>
                 </li>
                 <li>
-                    <a href="index.html">Privado</a>
+                    <a href="pedidos.html">Pedidos</a>
+                </li>
+                <li>
+                    <a href="carga-pedidos.html">Cargar Pedido</a>
                 </li>
             </ul>
         </div>
@@ -94,9 +101,9 @@
     </footer>
 
 
-
-
-<script src="js/main.js"></script>
-
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/detalle-pedido.js"></script>
 </body>
+
 </html>

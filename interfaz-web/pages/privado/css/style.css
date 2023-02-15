@@ -25,9 +25,27 @@ a {
     text-decoration: none;
     color: inherit;
 }
+a:hover {
+    font-weight: 700;
+}
 
 
-/* .....  ..... */
+/* .....   .....*/
+.hide {
+    display: none;
+}
+
+.showBlock {
+    display: block;
+}
+
+
+
+
+
+
+
+/* ..... BODY ..... */
 
 body {
     background-color: whitesmoke;
@@ -35,8 +53,11 @@ body {
     color: rgb(28, 24, 24);
 }
 
-a:hover {
-    font-weight: 700;
+
+/* ..... MAIN ..... */
+
+main {
+    margin: 45px 50px 175px  50px;
 }
 
 
@@ -107,13 +128,97 @@ footer {
     }
 
 
+/* ..... CONTENEDOR DATOS ..... */
+    /* ..... Generales ..... */
+.contenedorDetalles {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 10px 50px 6px rgba(0,0,0,0.1);
+    background-color: rgba(245, 245, 245, 0.137);
+    /* width: max-content; */
+}
+
+.contenedorDatos p {
+    font-size: 0.9rem;
+}
+#contenedorDatosCliente>div,
+#contenedorDatosPedido>div {
+    display: flex;
+    flex-flow: row nowrap;
+}
+#contenedorDatosCliente>div>div,
+#contenedorDatosPedido>div>div,
+#contenedorDatosMueble>div>div  {
+    width: 50%;
+} 
+.contenedorDatos {
+    margin-bottom: 40px;    
+}
+.contenedorDatos .datos-nombreDato {
+    font-weight: 700;
+    font-size: 1rem;
+}
+.contenedorDatos .datos-notas {
+    width: 400px;
+}
+
+
+    /* ..... Detalle Cliente ..... */
+    .detallePedido {
+        margin: 10px 0;
+    }
+
+    
 
 
 
+/* ..... TABLA ..... */
+/* ..... TABLA ..... */
+#containerTabla {
+    margin: 50px;
+}
+
+
+table {
+    border-collapse: collapse;
+    /* width: max-content;
+    max-width: 100%; */
+    margin: 0 auto;
+
+    border: 1px solid rgb(46, 42, 42);
+    border-radius: 5px;
+}
+/* thead, tbody { display: block; }
+
+tbody {
+    max-height: 400px;       
+    overflow-y: auto;    
+    overflow-x: hidden;  
+}  */
+
+tr {
+    max-height: 100px;
+
+}
+ tbody tr:nth-child(odd) {
+    background-color: rgb(236, 234, 234);
+    
+}
+th {
+    padding: 10px;
+    width: max-content;
+    text-align: left;
+}
 
 
 
-/* .....  ..... */
+td {
+    padding: 10px;
+
+} 
+
+
+
 /* .....  ..... */
 /* .....  ..... */
 /* .....  ..... */
