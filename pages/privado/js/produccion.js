@@ -7,45 +7,21 @@ const tablaMuebles = document.getElementById('tablaMuebles');
 
 
 let muebles;
-let pedidos;
 
-
-const getConjuntoDatos = () => {
-    return new Promise((resolve, reject) => {
-        
-        Promise.allSettled([  
-            API.getPedidos(),        
-            API.getMuebles()
-        ])
-        .then(results => {
-
-            results[0].value ? pedidos = results[0].value : console.log("Error fetch pedidos: ", results[0].reason)
-            console.log({pedidos})
-
-            results[1].value ? muebles = results[1].value : console.log("Error fetch muebles: ", results[1].reason) 
-            console.log({muebles})
-        
-            resolve()
-        })
-    })
-}
-
-
-const imprimirTablaProduccion = (listaMuebles, listaPedidos, tableBody, table) => {
+const imprimirTablaProduccion = (listaMuebles, tableBody, table) => {
     listaMuebles.forEach(mueble =>{
-        const pedidoMueble = listaPedidos.find(pedido => pedido.id === mueble.id_pedido)
-        const ultimoEstadoMueble = mueble.estados.sort((a,b) => new Date(a.fecha)-new Date(b.fecha))[mueble.estados.length-1]
+        const ultimoEstadoMueble = mueble.estadosHistoricos.sort((a,b) => new Date(a.fecha)-new Date(b.fecha))[mueble.estadosHistoricos.length-1]
         const html = `                
             <tr>
                 <td>${mueble.id}</td>
-                <td>${new Date(pedidoMueble.fecha_entrada).toLocaleDateString()}</td>
+                <td>${mueble.pedido.fechaEntrada ? new Date(mueble.pedido.fechaEntrada).toLocaleDateString() : ""}</td>
                 <td>${mueble.cantidad}</td>
-                <td>${mueble.modelo}</td>
+                <td>${mueble.modelo.nombre}</td>
                 <td>${mueble.largo}cm x ${mueble.alto}cm x ${mueble.profundidad}cm</td>
-                <td>${mueble.color}</td>
-                <td>${ultimoEstadoMueble.estado}</td>
-                <td>${pedidoMueble.cliente.nombre} ${pedidoMueble.cliente.apellido}</td>
-                <td>${pedidoMueble.id}</td>
+                <td>${mueble.color.nombre}</td>
+                <td>${ultimoEstadoMueble.estado.nombre}</td>
+                <td>${mueble.pedido.cliente.nombre} ${mueble.pedido.cliente.apellido}</td>
+                <td>${mueble.pedido.id}</td>
                 <td>${mueble.notas}</td>
                 <td><a href="detalle-mueble.html?id=${mueble.id}"> <i class="fa-solid fa-circle-info"></i> </a></td>
                 <td><a href="edit-mueble.html?id=${mueble.id}"> <i class="fa-regular fa-pen-to-square"></i> </a></td>
@@ -59,11 +35,31 @@ const imprimirTablaProduccion = (listaMuebles, listaPedidos, tableBody, table) =
 }
 
 
-const imprimirTabla = (muebles, pedidos, estados, elementoContenedor) => {
+
+API.getMuebles()
+.then(muebles => {
+    console.log({muebles})
+    try {
+        imprimirTablaProduccion(muebles, bodyTablaMuebles, tablaMuebles)        
+    }
+    catch(err) {
+        console.log(err)
+    }
+
+})
+.catch(err => {
+    console.log({err})
+    imprimirError("Error mostrando los datos", contenedorError)
+})
+
+
+
+/*
+const imprimirTabla = (muebles, pedidos, estadosHistoricos, elementoContenedor) => {
     const fragment = new DocumentFragment;
     console.log("MUEBLES => ", muebles)
     console.log("PEDIDOS", pedidos)
-    console.log("ESTADOS", estados)
+    console.log("ESTADOSHistoricos", estadosHistoricos)
 
 
     muebles.forEach(mueble =>{
@@ -71,9 +67,9 @@ const imprimirTabla = (muebles, pedidos, estados, elementoContenedor) => {
         console.log(mueble.id_pedido)
         const pedidoMueble = pedidos.find(pedido => pedido.id === mueble.id_pedido)
         console.error({pedidoMueble});
-        const estadosMueble = estados.filter(estado => estado.id_mueble === mueble.id)
-        console.log({estadosMueble})
-        const ultimoEstadoMueble = estadosMueble.sort((a,b) => new Date(a.fecha)-new Date(b.fecha))[estadosMueble.length-1]
+        const estadosHistoricosMueble = estadosHistoricos.filter(estado => estado.id_mueble === mueble.id)
+        console.log({estadosHistoricosMueble})
+        const ultimoEstadoMueble = estadosHistoricosMueble.sort((a,b) => new Date(a.fecha)-new Date(b.fecha))[estadosHistoricosMueble.length-1]
         console.error({ultimoEstadoMueble});
 
         const tr = document.createElement('tr');
@@ -125,14 +121,4 @@ const imprimirTabla = (muebles, pedidos, estados, elementoContenedor) => {
     tablaMuebles.classList.remove('hide');
     // tablaMuebles.classList.add('showBlock');
 }
-
-
-
-
-
-getConjuntoDatos()
-.then(() => {
-    console.log({muebles})
-    console.log({pedidos})
-    imprimirTablaProduccion(muebles, pedidos, bodyTablaMuebles, tablaMuebles)
-})
+*/

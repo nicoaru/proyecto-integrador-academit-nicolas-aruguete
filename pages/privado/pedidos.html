@@ -16,7 +16,7 @@
 
     <!-- CSS StyleSheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/privado.css">
+    <link rel="stylesheet" href="css/pedidos.css">
 
     <!-- JS que chequea si hay un usuario logeado -->
     <script src="js/isLogged.js"></script>
@@ -47,9 +47,32 @@
 
 
     <main>
-        <h1>Carga Pedidos</h1>
-    </main>
+        <h1>Pedidos</h1>
+        <div id="contenedorError" class="contenedorDatos"></div>
+        <section id="containerTabla">
+            <table id="tablaPedidos" class="hide">
+                <thead>
+                    <tr>
+                        <th>Nro</th>
+                        <th>Cliente</th>
+                        <th>Entrada</th>
+                        <th>Entrega</th>
+                        <th>Dirección entrega</th>
+                        <th>Notas</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody id="bodyTablaPedidos">
+                </tbody>
+            </table>
+        </section>
 
+        <section id="containerModalEdit">
+
+        </section>
+    </main>
+  
 
 
     <footer>
@@ -93,6 +116,10 @@
         </div>
 
     </footer>
+
+
+    <script src="js/api.js"></script>
+    <script src="js/pedidos.js"></script>
 </body>
 
 </html>

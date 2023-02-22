@@ -14,14 +14,15 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@400;700&display=swap"
         rel="stylesheet">
 
+
     <!-- CSS StyleSheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/pedidos.css">
+    <link rel="stylesheet" href="css/clientes.css">
 
     <!-- JS que chequea si hay un usuario logeado -->
     <script src="js/isLogged.js"></script>
 
-    <title>Fusion - Privado</title>
+    <title>Clientes</title>
 </head>
 
 <body>
@@ -47,22 +48,22 @@
 
 
     <main>
-        <h1>Pedidos</h1>
+        <h1>Clientes</h1>
+        <div id="contenedorError" class="contenedorDatos"></div>
         <section id="containerTabla">
-            <table id="tablaPedidos" class="hide">
+            <table id="tablaClientes" class="hide">
                 <thead>
                     <tr>
-                        <th>Nro</th>
-                        <th>Cliente</th>
-                        <th>Entrada</th>
-                        <th>Entrega</th>
-                        <th>Dirección entrega</th>
-                        <th>Notas</th>
+                        <th>Nombre</th>
+                        <th>Teléfono</th>
+                        <th>Email</th>
+                        <th>Tipo de cliente</th>
                         <th></th>
                         <th></th>
                     </tr>
                 </thead>
-                <tbody id="bodyTablaPedidos">
+                <tbody id="bodyTablaClientes">
+
                 </tbody>
             </table>
         </section>
@@ -70,8 +71,11 @@
         <section id="containerModalEdit">
 
         </section>
+
+
+
     </main>
-  
+
 
 
     <footer>
@@ -118,7 +122,7 @@
 
 
     <script src="js/api.js"></script>
-    <script src="js/pedidos.js"></script>
+    <script src="js/clientes.js"></script>
 </body>
 
 </html>

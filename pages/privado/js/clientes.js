@@ -9,8 +9,7 @@ const imprimirTablaClientes = (listaClientes, tableBody, table) => {
                 <td>${cliente.nombre} ${cliente.apellido}</td>
                 <td>${cliente.telefono}</td>
                 <td>${cliente.email}</td>
-                <td>${cliente.direccion}</td>
-                <td>${cliente.tipo_cliente}</td>
+                <td>${cliente.tipoCliente.nombre}</td>
                 <td><a href="detalle-cliente.html?id=${cliente.id}"> <i class="fa-solid fa-circle-info"></i> </a></td>
                 <td><a href="edit-cliente.html?id=${cliente.id}"> <i class="fa-regular fa-pen-to-square"></i> </a></td>
             </tr>`
@@ -22,6 +21,12 @@ const imprimirTablaClientes = (listaClientes, tableBody, table) => {
 
 }
 
+const imprimirError = (mensaje, elementoContenedor) => {
+    console.log({elementoContenedor})
+    elementoContenedor.innerHTML = `<h2>${mensaje}</h2>`
+}
+
+
 
 API.getClientes()
 .then(clientes => {
@@ -31,4 +36,5 @@ API.getClientes()
 })
 .catch(err => {
     console.log({err})
+    imprimirError("Error mostrando los datos", contenedorError)
 })
