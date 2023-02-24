@@ -10,12 +10,10 @@ const imprimirTablaPedidos = (listaPedidos, tableBody, table) => {
             <tr>
                 <td>${pedido.id}</td>
                 <td>${pedido.cliente.nombre} ${pedido.cliente.apellido}</td>
-                <td>${pedido.fechaEntrada? new Date(pedido.fechaEntrada).toLocaleDateString() : ""}</td>
-                <td>${pedido.fechaEntrega? new Date(pedido.fechaEntrega).toLocaleDateString() : ""}</td>
+                <td>${getLocaleDateStringFromUnixTime(pedido.fechaEntrada)}</td>
+                <td>${getLocaleDateStringFromUnixTime(pedido.fechaEntrega)}</td>
                 <td>${pedido.direccionEntrega}</td>
-                <td>${pedido.notas}</td>
                 <td><a href="detalle-pedido.html?id=${pedido.id}"> <i class="fa-solid fa-circle-info"></i> </a></td>
-                <td><a href="edit-pedido.html?id=${pedido.id}"> <i class="fa-regular fa-pen-to-square"></i> </a></td>
             </tr>`
 
         tableBody.innerHTML += html;

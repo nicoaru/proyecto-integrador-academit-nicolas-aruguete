@@ -1,26 +1,21 @@
-// Simulación de usuarios en la base de datos //
-// Simulación de usuarios en la base de datos //
-// const users = [
-//     {username: 'nicoaru',
-//     password: '1234'},
-//     {username: 'juanperez',
-//     password: '2345'},
-//     {username: 'anaprada',
-//     password: '3456'}
-// ]
-
-
-
-// Maneja el login //
-// Maneja el login //
-
+// elementos del DOM
 const loginButton = document.getElementById('loginButton')
 const usernameInput = document.getElementById('usernameInput')
 const passwordInput = document.getElementById('passwordInput')
 
+const logoutButton = document.getElementById('logoutButton')
+console.log("logoutButton: ", logoutButton)
+
+/*** Login ***/
+
 const login = async(username, password) => {
     let userRequest = {username, password}
     let user;
+
+    if(!username || !password) {
+        alert("Faltan datos")
+        return
+    }
 
     API.login(userRequest)
     .then(data => {
@@ -44,9 +39,27 @@ const login = async(username, password) => {
    
 }
 
-loginButton.onclick = (event) => {
+if(loginButton) {
+    loginButton.onclick = (event) => {
+        event.preventDefault();
+        const usernameValue = usernameInput.value;
+        const passwordValue = passwordInput.value;
+        login(usernameValue, passwordValue);
+    }   
+}
+
+
+/*** Logout ***/
+
+const logout = () => {
+            
+    sessionStorage.removeItem('username');
+    location.assign("../../index.html")
+        
+       
+}
+
+logoutButton.onclick = (event) => {
     event.preventDefault();
-    const usernameValue = usernameInput.value;
-    const passwordValue = passwordInput.value;
-    login(usernameValue, passwordValue);
+    logout();
 }

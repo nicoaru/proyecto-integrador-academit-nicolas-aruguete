@@ -171,6 +171,37 @@ class API {
             }
         })
     }
+    static updateClienteById = (idCliente, updatedCliente) => {
+        return new Promise(async(resolve, reject) => {
+
+            try {
+                const url = urlServer+'/api/clientes/'+(idCliente);
+                console.log({url})
+
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedCliente)
+                })
+                if(response.ok) {
+                    let rowsUpdated = await response.json();
+                    resolve(rowsUpdated);
+                }
+                else {
+                    const errorHTTP = {error: true, statusCode: response.status, message: response.statusText}
+                    console.log(errorHTTP)
+                    reject(errorHTTP)
+                }
+            }
+            catch(err) {
+                const error = {error: true, statusCode:-1, message: "Error en el client-side: "+err.message}
+                console.log(error)
+                reject(error)
+            }
+        })
+    }
 
 
     // PEDIDOS 
@@ -299,6 +330,38 @@ class API {
             }
             catch(err) {
                 const error = {error: true, message: "Error en el client-side: "+err.message}
+                console.log(error)
+                reject(error)
+            }
+        })
+    }
+
+    static updatePedidoById = (idPedido, updatedPedido) => {
+        return new Promise(async(resolve, reject) => {
+
+            try {
+                const url = urlServer+'/api/pedidos/'+(idPedido);
+                console.log({url})
+
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedPedido)
+                })
+                if(response.ok) {
+                    let rowsUpdated = await response.json();
+                    resolve(rowsUpdated);
+                }
+                else {
+                    const errorHTTP = {error: true, statusCode: response.status, message: response.statusText}
+                    console.log(errorHTTP)
+                    reject(errorHTTP)
+                }
+            }
+            catch(err) {
+                const error = {error: true, statusCode:-1, message: "Error en el client-side: "+err.message}
                 console.log(error)
                 reject(error)
             }
@@ -438,6 +501,38 @@ class API {
         })
     }
 
+    static updateMuebleById = (idMueble, updatedMueble) => {
+        return new Promise(async(resolve, reject) => {
+
+            try {
+                const url = urlServer+'/api/muebles/'+(idMueble);
+                console.log({url})
+
+                const response = await fetch(url, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(updatedMueble)
+                })
+                if(response.ok) {
+                    let rowsUpdated = await response.json();
+                    resolve(rowsUpdated);
+                }
+                else {
+                    const data = await response.json()
+                    const errorHTTP = {error: true, statusCode: response.status, message: response.statusText, data}
+                    console.log(errorHTTP)
+                    reject(errorHTTP)
+                }
+            }
+            catch(err) {
+                const error = {error: true, statusCode:-1, message: "Error en el client-side: "+err.message}
+                console.log(error)
+                reject(error)
+            }
+        })
+    }
 
 
     //**** ****//
@@ -743,7 +838,7 @@ class API {
 
             let estadoHistorico;
             try {
-                const url = urlServer+'/api/estado-historico/'.concat(idEstadoHistorico);
+                const url = urlServer+'/api/estados-historicos/'.concat(idEstadoHistorico);
                 console.log({url})
 
                 const response = await fetch(url, {
@@ -771,5 +866,36 @@ class API {
         })
     }
 
-} 
+    static createEstadoHistorico = (newEstadoHistorico) => {
+        return new Promise(async(resolve, reject) => {
 
+            try {
+                const url = urlServer+'/api/estados-historicos';
+                console.log({url})
+
+                const response = await fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(newEstadoHistorico)
+                })
+                if(response.ok) {
+                    let idGenerated = await response.json();
+                    resolve(idGenerated);
+                }
+                else {
+                    const errorHTTP = {error: true, statusCode: response.status, message: response.statusText}
+                    console.log(errorHTTP)
+                    reject(errorHTTP)
+                }
+            }
+            catch(err) {
+                const error = {error: true, statusCode:-1, message: "Error en el client-side: "+err.message}
+                console.log(error)
+                reject(error)
+            }
+        })
+    }
+
+}

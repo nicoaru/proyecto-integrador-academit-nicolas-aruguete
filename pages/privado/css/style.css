@@ -29,6 +29,16 @@ a:hover {
     font-weight: 700;
 }
 
+select {
+    appearance: none;
+
+    cursor: inherit;
+    line-height: inherit;
+
+    outline: none;
+  }
+
+
 
 /* .....   .....*/
 .hide {
@@ -128,24 +138,161 @@ footer {
     }
 
 
-/* ..... CONTENEDOR DATOS ..... */
-    /* ..... Generales ..... */
+/*** ..... PAGINAS DE DETALLES ..... ***/
+
+    /*** Contenedor general ***/
+    .contenedorDetalleGeneral {
+        padding: 50px;
+        border-radius: 10px;
+        box-shadow: 0px 10px 50px 6px rgba(0,0,0,0.1);
+        background-color: rgba(245, 245, 245, 0.137);
+        margin-bottom: 40px;
+        /* width: max-content; */
+    }
+
+
+    /*** Contenedor del dato primario ***/ 
+    .contenedorDetallePrimario .flexContainer {
+        display: flex;
+        flex-flow: row nowrap;
+    }
+
+    .contenedorDetallePrimario .datos,
+    .contenedorDetallePrimario .notas {
+        width: 50%;
+    } 
+
+    .contenedorDetallePrimario h2 {
+        font-size: 1.5rem;
+    }
+
+    .contenedorDetallePrimario label {
+        display: block;
+        margin: 5px 15px 5px 0px;
+        font-weight: bold;
+    }
+
+    .contenedorDetallePrimario input {
+        font-size: 0.9rem;
+        line-height: 1.7em;
+    }
+
+    .contenedorDetallePrimario input:not([disabled]) {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+        outline: 1px solid aquamarine;
+        padding: 0 5px 0 5px;
+    }
+
+    .contenedorDetallePrimario select {
+        background-color: whitesmoke;
+        font-size: 0.9rem;
+        line-height: 1.7em;
+        color: inherit;
+    }
+
+    .contenedorDetallePrimario select:not([disabled]) {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+        outline: 1px solid aquamarine;
+        padding: 0 5px 0 5px;
+    }
+    .contenedorDetallePrimario select[disabled] {
+        color: inherit;
+    }
+
+    .contenedorDetallePrimario textarea {
+        width: 80%;
+        height: 90px;
+        font-size: 0.9rem;
+        background-color: whitesmoke;
+        font-family: 'Roboto', sans-serif;
+        color: inherit;
+        resize: none;
+    }
+    .contenedorDetallePrimario textarea:not([disabled]) {
+        background-color: rgba(255, 255, 255, 0.5);
+        border-radius: 4px;
+        outline: 1px solid aquamarine;
+        padding: 5px;
+    }
+
+    .contenedorDetallePrimario .btn {
+        margin-right: 25px;
+        background-color: inherit;
+        font-family: 'Roboto', sans-serif;
+        font-weight: 700;
+        cursor: pointer;
+        padding: 3px;
+        border: 1px solid rgb(28, 24, 24);
+        border-radius: 3px;
+    }
+    .contenedorDetallePrimario .btnRed {
+        color: rgb(188, 21, 21);
+        border-color: rgb(188, 21, 21);
+    }
+
+
+    /*** Contenedor del dato secundario ***/ 
+    .contenedorDetalleSecundario {
+        margin-top: 100px;
+        position: relative;
+    }
+
+    .contenedorDetalleSecundario h2 {
+        font-size: 1.25rem;
+    }
+
+    .contenedorDetalleSecundario  h3 {
+        font-size: 1.15rem;
+    }
+
+    .contenedorDetalleSecundario  ul {
+        margin-left: 15px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .contenedorDetalleSecundario  ul li {
+        margin-top: 10px;
+    }
+
+    .contenedorDetalleSecundario::before {
+        position: absolute;
+        top: -50px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 60%;
+        content: "";
+        border-top: 1px solid rgb(28, 24, 24);
+    }
+
+
+
+
+
+/* 
 .contenedorDetalles {
     padding: 15px;
     border-radius: 10px;
     box-shadow: 0px 10px 50px 6px rgba(0,0,0,0.1);
     background-color: rgba(245, 245, 245, 0.137);
-    /* width: max-content; */
+
 }
 
 .contenedorDatos p {
     font-size: 0.9rem;
 }
+
+*/
+/*
 #contenedorDatosCliente>div,
 #contenedorDatosPedido>div {
     display: flex;
     flex-flow: row nowrap;
 }
+*/
+/*
 #contenedorDatosCliente>div>div,
 #contenedorDatosPedido>div>div,
 #contenedorDatosMueble>div>div  {
@@ -160,13 +307,15 @@ footer {
 }
 .contenedorDatos .datos-notas {
     width: 400px;
-}
+} */
 
 
     /* ..... Detalle Cliente ..... */
+/*     
     .detallePedido {
         margin: 10px 0;
-    }
+    } 
+*/
 
     
 

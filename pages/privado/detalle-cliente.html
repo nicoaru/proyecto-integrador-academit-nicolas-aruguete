@@ -39,19 +39,18 @@
                 <a href="produccion.html">Produccion</a>
                 <span><i class="fa-solid fa-circle"></i></span>
                 <a href="carga-pedidos.html">Cargar Pedido</a>
-
+                <span><i class="fa-solid fa-circle"></i></span>
+                <a href="#" id="logoutButton">Logout</a>
             </div>
         </nav>
     </header>
 
-
-
     <main>
-        <div class="contenedorDetalles">
-            <div id="contenedorError" class="contenedorDatos"></div>
-            <div id="contenedorDatosCliente" class="contenedorDatos"></div>
-            <div id="contenedorPedidosPendientes" class="contenedorDatos"></div>
-            <div id="contenedorPedidosEntregados" class="contenedorDatos"></div>
+        <div class="contenedorDetalleGeneral">
+            <div id="contenedorError"></div>
+            <div id="contenedorDatosCliente" class="contenedorDetallePrimario"></div>
+            <div id="contenedorPedidosPendientes" class="contenedorDetalleSecundario"></div>
+            <div id="contenedorPedidosEntregados" class="contenedorDetalleSecundario"></div>
         </div>
     </main>
 
@@ -103,6 +102,7 @@
 
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
+    <script src="js/login-logout.js"></script>
     <script src="js/detalle-cliente.js"></script>
 </body>
 

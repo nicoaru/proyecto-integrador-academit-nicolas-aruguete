@@ -1,0 +1,27 @@
+
+#contenedorDatosMueble .h-2 {
+    font-size: 1.5rem;
+    color: rgb(28, 24, 24);
+    font-weight: bold;
+}
+
+
+/*** Retoques al contenedor del dato primario ***/ 
+#contenedorDatosPedido h2 {
+    font-size: 1.25rem;
+}
+
+#contenedorDatosPedido {
+    margin-top: 100px;
+    position: relative;
+}
+
+#contenedorDatosPedido::before {
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    content: "";
+    border-top: 1px solid rgb(28, 24, 24);
+} 

@@ -16,7 +16,7 @@
 
     <!-- CSS StyleSheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/clientes.css">
+    <link rel="stylesheet" href="css/detalle-mueble.css">
 
     <!-- JS que chequea si hay un usuario logeado -->
     <script src="js/isLogged.js"></script>
@@ -39,7 +39,8 @@
                 <a href="produccion.html">Produccion</a>
                 <span><i class="fa-solid fa-circle"></i></span>
                 <a href="carga-pedidos.html">Cargar Pedido</a>
-
+                <span><i class="fa-solid fa-circle"></i></span>
+                <a href="#" id="logoutButton">Logout</a>
             </div>
         </nav>
     </header>
@@ -47,16 +48,14 @@
 
 
     <main>
-        <div class="contenedorDetalles">
+        <div class="contenedorDetalleGeneral">
             <div id="contenedorError" class="contenedorDatos"></div>
-            <div id="contenedorDatosMueble" class="contenedorDatos"></div>
-            <div id="contenedorDatosPedido" class="contenedorDatos"></div>            
-            <div id="contenedorOtrosMueblesPedido" class="contenedorDatos"></div>
+            <div id="contenedorDatosMueble" class="contenedorDetallePrimario"></div>
+            <div id="contenedorDatosPedido" class="contenedorDetallePrimario"></div>            
+            <div id="contenedorOtrosMueblesPedido" class="contenedorDetalleSecundario"></div>
 
         </div>
     </main>
-
-
 
 
     <footer>
@@ -104,6 +103,7 @@
 
     <script src="js/utils.js"></script>
     <script src="js/api.js"></script>
+    <script src="js/login-logout.js"></script>
     <script src="js/detalle-mueble.js"></script>
 </body>
 

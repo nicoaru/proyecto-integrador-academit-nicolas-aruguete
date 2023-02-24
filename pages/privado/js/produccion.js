@@ -22,9 +22,7 @@ const imprimirTablaProduccion = (listaMuebles, tableBody, table) => {
                 <td>${ultimoEstadoMueble.estado.nombre}</td>
                 <td>${mueble.pedido.cliente.nombre} ${mueble.pedido.cliente.apellido}</td>
                 <td>${mueble.pedido.id}</td>
-                <td>${mueble.notas}</td>
                 <td><a href="detalle-mueble.html?id=${mueble.id}"> <i class="fa-solid fa-circle-info"></i> </a></td>
-                <td><a href="edit-mueble.html?id=${mueble.id}"> <i class="fa-regular fa-pen-to-square"></i> </a></td>
             </tr>`
 
         tableBody.innerHTML += html;
