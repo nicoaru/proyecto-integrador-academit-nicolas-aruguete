@@ -227,9 +227,15 @@ const guardarCambios = () => {
 
     API.updateClienteById(cliente.id, updatedCliente)
     .then(result => {
-        alert("Cambios guardados")
-        console.log("Cambios guardados: "+result)
-        deshabilitarEdicion()        
+        try {
+            console.log("Cambios guardados: "+result)
+            showModal("Cambios guardados con éxito")
+            deshabilitarEdicion()              
+        }
+        catch(err){
+            console.log(err)
+        }
+      
         
         API.getClienteById(cliente.id)
         .then(clienteActualizado => {
@@ -239,8 +245,8 @@ const guardarCambios = () => {
         .catch(err => console.log("Error trayendo el cliente de vuelta: "+err))
     })
     .catch(err => {
-        alert("Hubo un error guardando los cambios")
-        console.log({err})
+        console.log({err})        
+        showModal("Hubo un error guardando los cambios")
     })
 }
 

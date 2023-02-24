@@ -40,7 +40,7 @@ select {
 
 
 
-/* .....   .....*/
+/* ..... UTILS .....*/
 .hide {
     display: none;
 }
@@ -50,8 +50,44 @@ select {
 }
 
 
+/*** MODAL ***/
+#modal {
+    position: absolute;
+    display: none;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: whitesmoke;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
+    transition: opacity 5s ease;
+}
+#modalBody {
+    height: 100%;
+    padding: 50px 25px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+}
 
+#modal .closeModalBtn {
+    position: absolute;
+    top: 0;
+    left: 100%;
+    text-shadow: 0px 0px 10px rgba(242,237,237,0.73);
+    
+    transform: translate(-50%, -50%);
+}
+
+    /*** toggle modal ***/
+    #modal[data-show="true"] {
+        display: block;
+        z-index: 20;
+    }
+    #modal[data-show="false"] {
+        display: none;
+    }
 
 
 

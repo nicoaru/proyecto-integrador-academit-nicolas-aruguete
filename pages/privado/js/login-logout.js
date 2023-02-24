@@ -13,7 +13,7 @@ const login = async(username, password) => {
     let user;
 
     if(!username || !password) {
-        alert("Faltan datos")
+        showModal("Faltan datos")
         return
     }
 
@@ -28,13 +28,17 @@ const login = async(username, password) => {
     })
     .catch(err => {
         if(err.statusCode === 401) {
-            alert("No autorizado")
-            console.log('No autorizado')
+            console.log('No autorizado: ', err)            
+            showModal("No autorizado")
         }
         else if (err.statusCode){
-            alert("Hubo un problema en el servidor")
+            console.log("Hubo un problema en el servidor: ", err)
+            showModal("Hubo un problema en el servidor")
         }
-        else alert("Tuvimos un problema. Lo siento")
+        else {
+            console.log("Tuvimos un problema: ", err)
+            showModal("Tuvimos un problema. Lo siento")
+        }
     })
    
 }
@@ -52,10 +56,8 @@ if(loginButton) {
 /*** Logout ***/
 
 const logout = () => {
-            
     sessionStorage.removeItem('username');
-    location.assign("../../index.html")
-        
+    location.assign("../../index.html")    
        
 }
 

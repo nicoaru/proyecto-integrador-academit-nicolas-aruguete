@@ -335,8 +335,8 @@ const guardarCambios = () => {
     API.updateMuebleById(mueble.id, updatedMueble)
     .then(result => {
         try {
-            alert("Cambios guardados")
             console.log("Update pedido realiado con éxito: "+result)
+            showModal("Cambios guardados")
             deshabilitarEdicion()             
         }
         catch(err) {
@@ -377,8 +377,8 @@ const guardarCambios = () => {
 
     })
     .catch(err => {
-        alert("Hubo un error guardando los cambios")
         console.log(err)
+        showModal("Hubo un error guardando los cambios")
     })
 }
 

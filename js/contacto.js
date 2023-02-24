@@ -1,7 +1,6 @@
 
-// Formulario de contacto //
-// Formulario de contacto //
-
+/// Formulario de contacto ///
+/// Formulario de contacto ///
 const urlServer = "http://localhost:8080/JavaServer-1.0-SNAPSHOT";
 
 const formContacto = document.getElementById('formContacto')
@@ -20,16 +19,19 @@ const fetchConsulta = (consulta) => {
     })
 }
 
-
-
-
 const enviarConsulta = async(nombre, telefono, textoConsulta, elementoFormulario) => {
+    if(!nombre || !telefono || !textoConsulta) {
+        showModal("Completar todos los campos")
+        return
+    }
+
     let consulta = {nombre, telefono, textoConsulta}
 
     fetchConsulta(consulta)
     .then(resp => {
         if(resp.ok) {
             console.log("Consulta enviada con éxito")
+            showModal("Consulta enviada con éxito")
         }
         else {
             console.log("Hubo un error con el servidor. Intentalo de nuevo más tarde")
@@ -41,10 +43,7 @@ const enviarConsulta = async(nombre, telefono, textoConsulta, elementoFormulario
         console.log("Tuvimos un error enviando tu consuta... Intentalo nuevamente más tarde")
         elementoFormulario.reset()
     })
-   
 }
-
-
 
 enviarButton.onclick = (event) => {
     event.preventDefault();
@@ -54,12 +53,21 @@ enviarButton.onclick = (event) => {
     enviarConsulta(nombreValue, telefonoValue, textoConsultaValue, formContacto);    
 }
 
-/*
-enviarButton.addEventListener('onclick', (event) => {
-    event.preventDefault();
-    const nombreValue = nombreInput.value;
-    const telefonoValue = telefonoInput.value;
-    const textoConsultaValue = textoConsultaInput.value;
-    enviarConsulta(nombreValue, telefonoValue, textoConsultaValue);    
-})
-*/
+
+
+/// MODAL ///
+
+const modal = document.getElementById('modal');
+const modalBody = document.getElementById('modalBody');
+const closeModalBtn= document.getElementById('closeModalBtn')
+
+const showModal = (msg) => {
+    modalBody.innerHTML = `<h4>${msg}</h4>`
+    modal.dataset.show = 'true';
+}
+
+const closeModal = () => {
+    modal.dataset.show = 'false';
+}
+
+closeModalBtn.onclick = closeModal;

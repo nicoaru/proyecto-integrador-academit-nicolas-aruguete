@@ -1,3 +1,4 @@
+//** FECHAS **//
 const getISODateStringFromUnixTime = (unixTime) => {
     try {
         if(!unixTime) return ""
@@ -34,3 +35,24 @@ const getUnixTimeFromString = (DateString) => {
     const unixTime = date.getTime()
     return unixTime
 }
+
+
+//** MODAL **/
+
+const modal = document.getElementById('modal');
+const modalBody = document.getElementById('modalBody');
+const closeModalBtn= document.getElementById('closeModalBtn')
+
+const showModal = (msg) => {
+    console.log("Entró showmodal")
+    console.log()
+
+    modalBody.innerHTML = `<h4>${msg}</h4>`
+    modal.dataset.show = 'true';
+}
+
+const closeModal = () => {
+    modal.dataset.show = 'false';
+}
+
+closeModalBtn.onclick = closeModal;
